@@ -1,11 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import RectangleButton from "../src/components/RectangleButton";
+import "./style.css";
 
 const Top = () => {
+  const navigate = useNavigate(); // useNavigateフックを取得
+
+  const StartClick = () => {
+    navigate("/game"); // '/game'パスに移動
+  };
+  const SettingClick = () => {
+    navigate("/setting");
+  };
   return (
-    <div>
-      <h2>Home Page</h2>
-      <Link to="/game">Game</Link>
+    <div className="button_container">
+      <RectangleButton label="START" onClick={StartClick} />
+      {/*<RectangleButton label="せってい" onClick={SettingClick} />*/}
     </div>
   );
 };

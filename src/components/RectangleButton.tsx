@@ -1,5 +1,5 @@
 import React from "react";
-import "./components.css"; // components.cssをインポート
+import "./component.css"; // components.cssをインポート
 
 const RectangleButton = () => {
   return <p className="testtext">こうだ！！</p>;

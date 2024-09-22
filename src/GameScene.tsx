@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const About = () => {
+const Game = () => {
   return (
     <div>
       <h2>About Page</h2>
@@ -10,4 +10,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Game;

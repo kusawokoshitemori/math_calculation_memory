@@ -1,18 +1,24 @@
 button {
+  height: 15%;
+  width: 60%;
   background-color: #4caf50; /* ボタンの背景色 */
   color: white; /* 文字色 */
   border: none; /* 枠線なし */
-  padding: 15px 32px; /* 内側の余白 */
   text-align: center; /* 文字の中央揃え */
   text-decoration: none; /* 下線なし */
   display: inline-block; /* ブロック要素に */
-  font-size: 16px; /* フォントサイズ */
-  margin: 4px 2px; /* 外側の余白 */
+  font-size: 48px; /* フォントサイズ */
   cursor: pointer; /* マウスカーソルをポインタに */
-  border-radius: 5px; /* 角を丸くする */
+  border-radius: 10px; /* 角を丸くする */
   transition: background-color 0.3s; /* 背景色の変化にトランジションを追加 */
+  margin: 20px 0;
 }
 
 button:hover {
   background-color: #45a049; /* マウスオーバー時の背景色 */
+}
+
+.title_logo_image {
+  width: 30%;
+  height: auto;
 }

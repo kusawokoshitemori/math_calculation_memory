@@ -21,6 +21,17 @@ module.exports = {
         test: /\.css$/, // CSSファイルを処理するルール
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i, // 画像ファイルを処理するルール
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[path][name].[ext]", // 画像ファイルの名前とパスのフォーマット
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [

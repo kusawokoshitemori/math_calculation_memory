@@ -22,3 +22,39 @@ button:hover {
   width: 30%;
   height: auto;
 }
+
+/* タイマーのコンポーネント */
+.Time_module_container {
+  position: relative; /* 親要素に相対位置を設定 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Timer_back_line {
+  width: 100%; /* 線の幅を100%に設定 */
+  height: 2px; /* 線の太さを指定 */
+  background-color: black; /* 線の色を黒に設定 */
+  position: absolute; /* 絶対位置に設定 */
+  top: 78px; /* 四角の下に線を配置(heightの1/2でないといけない) */
+}
+
+.Timer_back_square {
+  width: 30%; /* 四角の幅 */
+  height: 156px; /* 四角の高さ */
+  background-color: rgb(255, 75, 75); /* 四角の色を赤に設定 */
+  position: absolute; /* 絶対位置に設定 */
+  top: 0; /* 四角を親要素の上に配置 */
+  left: 50%; /* 線の中央に配置 */
+  transform: translate(-50%, 0); /* 中央に配置するための調整 */
+  border-radius: 10px;
+
+  display: flex; /* フレックスボックスを使用 */
+  align-items: center; /* 縦方向に中央揃え */
+  justify-content: center; /* 横方向に中央揃え */
+}
+.Time_Left {
+  color: #e3fad5;
+  font-size: 128px;
+}

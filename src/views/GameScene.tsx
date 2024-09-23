@@ -16,6 +16,7 @@ const Game: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
+  /* 誤答した時に5秒引くやつ */
   const handleIncorrectAnswer = () => {
     setTimeLeft((prev) => Math.max(prev - 5, 0)); // 5秒を引く。ただし、負の値にはしない
   };

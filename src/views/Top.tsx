@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import RectangleButton from "../src/components/RectangleButton";
-import titleLogo from "./images/title_logo.png";
-import "./style.css";
-import backgroundImage from "./images/背景_夏_涼しい.jpeg";
+import RectangleButton from "../components/RectangleButton";
+import titleLogo from "../images/title_logo.png";
+import "../styles/style.css";
+import backgroundImage from "../images/背景_夏_涼しい.jpeg";
 
 const Top = () => {
   const navigate = useNavigate(); // useNavigateフックを取得

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Top from "./Top"; // 新しく作成したHomeコンポーネントをインポート
-import Game from "./GameScene"; // Aboutも同様に別ファイルにしている前提
+import Top from "./views/Top"; // 新しく作成したHomeコンポーネントをインポート
+import Game from "./views/GameScene"; // Aboutも同様に別ファイルにしている前提
 
 const App = () => {
   return (

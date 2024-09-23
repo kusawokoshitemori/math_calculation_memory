@@ -9,7 +9,7 @@ body {
 .Top_layout {
   width: 100vw; /* ビューポートの幅に合わせる */
   height: 100vh; /* ビューポートの高さに合わせる */
-  background-image: url("./images/背景_夏_涼しい.jpeg");
+  background-image: url("/src/images/背景_夏_涼しい.jpeg");
   background-size: cover;
 }
 

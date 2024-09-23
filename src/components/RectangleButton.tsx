@@ -1,5 +1,5 @@
 import React from "react";
-import "./component.css"; // components.cssをインポート
+import "../styles/component.css"; // components.cssをインポート
 
 interface RectangleButtonProps {
   label: string; // ボタンに表示するラベルの型

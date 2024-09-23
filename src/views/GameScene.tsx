@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TimeLimitTimer from "../components/TimeLimitTimer";
+import Math_formula from "../components/math_formula";
 import backgroundImage1 from "../images/背景_夏_涼しい.jpeg";
 import "../styles/style.css";
 
@@ -23,11 +24,12 @@ const Game: React.FC = () => {
 
   return (
     <div>
-      <h1>ゲーム画面</h1>
-      <TimeLimitTimer
+      <h1>ゲーム画面 </h1>
+      {/*<TimeLimitTimer
         timeLeft={timeLeft}
         onIncorrectAnswer={handleIncorrectAnswer}
-      />
+      />*/}
+      <Math_formula />
       {/* 他のゲームロジックを追加 */}
     </div>
   );

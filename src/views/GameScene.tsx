@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import TimeLimitTimer from "../components/TimeLimitTimer";
 import backgroundImage1 from "../images/背景_夏_涼しい.jpeg";
 import "../styles/style.css";
 
-const Game = () => {
+const Game: React.FC = () => {
+  const [timeLeft, setTimeLeft] = useState(30); // 初期制限時間を30秒に設定
+
+  useEffect(() => {
+    // タイマーを設定
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0)); // 0未満にはしない
+    }, 1000);
+
+    // コンポーネントがアンマウントされるときにクリーンアップ
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleIncorrectAnswer = () => {
+    setTimeLeft((prev) => Math.max(prev - 5, 0)); // 5秒を引く。ただし、負の値にはしない
+  };
+
   return (
     <div>
-      <div
-        className="Game_layout"
-        style={{ backgroundImage: `url(${backgroundImage1})` }}
-      >
-        <p>ゲーム画面</p>
-      </div>
+      <h1>ゲーム画面</h1>
+      <TimeLimitTimer
+        timeLeft={timeLeft}
+        onIncorrectAnswer={handleIncorrectAnswer}
+      />
+      {/* 他のゲームロジックを追加 */}
     </div>
   );
 };

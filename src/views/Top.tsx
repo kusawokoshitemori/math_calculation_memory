@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import RectangleButton from "../components/RectangleButton";
 import titleLogo from "../images/title_logo.png";
 import "../styles/style.css";
-import backgroundImage from "../images/背景_夏_涼しい.jpeg";
+import backgroundImage1 from "../images/背景_夏_涼しい.jpeg";
 
 const Top = () => {
   const navigate = useNavigate(); // useNavigateフックを取得
@@ -17,7 +17,7 @@ const Top = () => {
   return (
     <div
       className="Top_layout"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      style={{ backgroundImage: `url(${backgroundImage1})` }}
     >
       <div className="button_container">
         <img

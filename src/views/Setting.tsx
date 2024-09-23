@@ -2,17 +2,17 @@ import React from "react";
 import backgroundImage1 from "../images/背景_夏_涼しい.jpeg";
 import "../styles/style.css";
 
-const Game = () => {
+const Setting = () => {
   return (
     <div>
       <div
-        className="Game_layout"
+        className="Setting_layout"
         style={{ backgroundImage: `url(${backgroundImage1})` }}
       >
-        <p>ゲーム画面</p>
+        <p>設定が入る</p>
       </div>
     </div>
   );
 };
 
-export default Game;
+export default Setting;

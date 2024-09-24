@@ -86,9 +86,12 @@ input[type="number"] {
   -moz-appearance: textfield;
   appearance: none; /* 標準プロパティを追加 */
 }
-.testtesttest1 {
+.answer_input_place_container {
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .answer_input_place {
   width: 30%;

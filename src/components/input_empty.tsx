@@ -22,14 +22,17 @@ const InputEmpty: React.FC<InputEmptyProps> = ({
   };
 
   return (
-    <div className="testtesttest1">
-      <input
-        type="number"
-        className="answer_input_place"
-        value={inputValue ?? ""} // undefinedの場合は空文字を表示
-        onChange={handleInputChange} // 入力値変更時に状態を更新
-        onKeyDown={onKeyDown} // 親から受け取ったonKeyDownを適用
-      />
+    <div>
+      {" "}
+      <div className="answer_input_place_container">
+        <input
+          type="number"
+          className="answer_input_place"
+          value={inputValue ?? ""} // undefinedの場合は空文字を表示
+          onChange={handleInputChange} // 入力値変更時に状態を更新
+          onKeyDown={onKeyDown} // 親から受け取ったonKeyDownを適用
+        />
+      </div>
       <p>現在の答え: {answer.join(", ")}</p> {/* 現在の答えを表示 */}
     </div>
   );

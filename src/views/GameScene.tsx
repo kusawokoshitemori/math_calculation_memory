@@ -9,6 +9,7 @@ const Game: React.FC = () => {
   const [answer, setAnswer] = useState<number[]>([]); // answer状態を管理 これでこっちに配列を用意できる
 
   const [timeLeft, setTimeLeft] = useState(30); // 初期制限時間を30秒に設定
+  const [correctCount, setCorrectCount] = useState(0); //正解数
 
   useEffect(() => {
     // タイマーを設定
@@ -39,18 +40,40 @@ const Game: React.FC = () => {
     return `${num1} + ${num2}`; // 数式を返す
   };
 
+  //入力した数字が入ってる
+  const [inputValue, setInputValue] = useState<number>();
+  // Enterキーが押されたときのハンドラ
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      // 入力値が正解の場合
+      if (inputValue === answer[answer.length - 1]) {
+        setCorrectCount((prevCount) => prevCount + 1); // 正解カウントを増やす
+        console.log("正解");
+        generateExpression(); // 次の式を生成
+      } else {
+        console.log("不正解");
+        handleIncorrectAnswer();
+      }
+
+      // 入力値をリセット
+      setInputValue(undefined);
+    }
+  };
+
   return (
-    <div>
+    <div className="answer_input_container">
       <h1>ゲーム画面 </h1>
-      {/*<TimeLimitTimer
+      <TimeLimitTimer
         timeLeft={timeLeft}
         onIncorrectAnswer={handleIncorrectAnswer}
-      />*/}
+      />
       <Math_formula answer={answer} setAnswer={setAnswer} />
       <InputEmpty
         answer={answer}
         setAnswer={setAnswer}
-        generateExpression={generateExpression}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        onKeyDown={handleKeyDown}
       />
       {/* 他のゲームロジックを追加 */}
     </div>

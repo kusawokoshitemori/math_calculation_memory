@@ -11,7 +11,8 @@ const Game: React.FC = () => {
 
   const [timeLeft, setTimeLeft] = useState(30); // 初期制限時間を30秒に設定
   const [correctCount, setCorrectCount] = useState(0); //正解数
-  const [NewFormula, setNewFormula] = useState("ww");
+  const [NewFormula, setNewFormula] = useState("Enterで開始"); //式の表示
+  const Remember_Numbers_Numbers: number = 2; //おぼえる数 defaltは2
 
   useEffect(() => {
     // タイマーを設定
@@ -44,10 +45,19 @@ const Game: React.FC = () => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       // 入力値が正解の場合
-      if (inputValue === answer[answer.length - 1]) {
+      if (
+        inputValue === undefined &&
+        answer.length <= Remember_Numbers_Numbers
+      ) {
+        generateExpression();
+      } else if (
+        inputValue === answer[answer.length - (Remember_Numbers_Numbers + 1)]
+      ) {
         setCorrectCount((prevCount) => prevCount + 1); // 正解カウントを増やす
         console.log("正解");
         generateExpression(); // 次の式を生成
+      } else if (inputValue === undefined) {
+        console.log("空だよ");
       } else {
         console.log("不正解");
         handleIncorrectAnswer();

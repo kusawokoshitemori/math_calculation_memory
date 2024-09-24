@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Box } from "@mui/material";
 import TimeLimitTimer from "../components/TimeLimitTimer";
 import Math_formula from "../components/math_formula";
 import InputEmpty from "../components/input_empty";

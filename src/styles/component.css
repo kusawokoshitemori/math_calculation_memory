@@ -66,6 +66,13 @@ button:hover {
   font-size: 128px;
 }
 
+/* ここから式の画面 */
+.NewFormula_big_string {
+  padding: 0;
+  margin: 0;
+  font-size: 172px;
+}
+
 /* ここから入力画面 */
 /* Chrome, Safari, Edge 対応 */
 input[type="number"]::-webkit-outer-spin-button,
@@ -74,7 +81,6 @@ input[type="number"]::-webkit-inner-spin-button {
   appearance: none; /* 標準プロパティを追加 */
   margin: 0;
 }
-
 /* Firefox 対応 */
 input[type="number"] {
   -moz-appearance: textfield;
@@ -87,5 +93,5 @@ input[type="number"] {
 .answer_input_place {
   width: 30%;
   height: auto;
-  font-size: 256px;
+  font-size: 196px;
 }

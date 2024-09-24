@@ -10,6 +10,7 @@ const Game: React.FC = () => {
 
   const [timeLeft, setTimeLeft] = useState(30); // 初期制限時間を30秒に設定
   const [correctCount, setCorrectCount] = useState(0); //正解数
+  const [NewFormula, setNewFormula] = useState("ww");
 
   useEffect(() => {
     // タイマーを設定
@@ -20,11 +21,6 @@ const Game: React.FC = () => {
     // コンポーネントがアンマウントされるときにクリーンアップ
     return () => clearInterval(timer);
   }, []);
-
-  //答え確認用
-  useEffect(() => {
-    console.log("Current answers in parent:", answer);
-  }, [answer]);
 
   /* 誤答した時に5秒引くやつ */
   const handleIncorrectAnswer = () => {
@@ -37,7 +33,8 @@ const Game: React.FC = () => {
     const num2 = Math.floor(Math.random() * 100);
     const newAnswer = num1 + num2;
     setAnswer([...answer, newAnswer]); // 答えを更新
-    return `${num1} + ${num2}`; // 数式を返す
+    const formula = `${num1} + ${num2}`; // 新しい数式を作成
+    setNewFormula(formula); // 数式を newFormula に保存
   };
 
   //入力した数字が入ってる
@@ -62,12 +59,15 @@ const Game: React.FC = () => {
 
   return (
     <div className="answer_input_container">
-      <h1>ゲーム画面 </h1>
       <TimeLimitTimer
         timeLeft={timeLeft}
         onIncorrectAnswer={handleIncorrectAnswer}
       />
-      <Math_formula answer={answer} setAnswer={setAnswer} />
+      <Math_formula
+        answer={answer}
+        setAnswer={setAnswer}
+        NewFormula={NewFormula}
+      />
       <InputEmpty
         answer={answer}
         setAnswer={setAnswer}
@@ -75,7 +75,6 @@ const Game: React.FC = () => {
         setInputValue={setInputValue}
         onKeyDown={handleKeyDown}
       />
-      {/* 他のゲームロジックを追加 */}
     </div>
   );
 };

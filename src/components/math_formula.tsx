@@ -4,9 +4,14 @@ import "../styles/component.css"; // styles/component.cssをインポート
 interface MathFormulaProps {
   answer: number[];
   setAnswer: React.Dispatch<React.SetStateAction<number[]>>;
+  NewFormula: string;
 }
 
-const Math_formula: React.FC<MathFormulaProps> = ({ answer, setAnswer }) => {
+const Math_formula: React.FC<MathFormulaProps> = ({
+  answer,
+  setAnswer,
+  NewFormula,
+}) => {
   const [expression, setExpression] = useState<string>("");
 
   useEffect(() => {
@@ -29,8 +34,7 @@ const Math_formula: React.FC<MathFormulaProps> = ({ answer, setAnswer }) => {
 
   return (
     <div>
-      <button onClick={generateExpression}>式を生成</button>
-      <p>{expression}</p>
+      <p className="NewFormula_big_string">{NewFormula}</p>
       {/* 答えは非表示にする */}
     </div>
   );

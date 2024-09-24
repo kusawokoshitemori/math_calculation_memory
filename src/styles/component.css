@@ -37,6 +37,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 156px; /* 四角形に合わせる */
 }
 
 .Timer_back_line {
@@ -67,6 +68,11 @@ button:hover {
 }
 
 /* ここから式の画面 */
+.NewFormula_big_string_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .NewFormula_big_string {
   padding: 0;
   margin: 0;

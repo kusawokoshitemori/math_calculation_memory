@@ -33,7 +33,7 @@ const Math_formula: React.FC<MathFormulaProps> = ({
   };
 
   return (
-    <div>
+    <div className="NewFormula_big_string_container">
       <p className="NewFormula_big_string">{NewFormula}</p>
       {/* 答えは非表示にする */}
     </div>

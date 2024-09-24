@@ -60,10 +60,13 @@ const Game: React.FC = () => {
 
   return (
     <div className="answer_input_container">
-      <TimeLimitTimer
-        timeLeft={timeLeft}
-        onIncorrectAnswer={handleIncorrectAnswer}
-      />
+      <div className="time_input_wrapper">
+        <TimeLimitTimer
+          timeLeft={timeLeft}
+          onIncorrectAnswer={handleIncorrectAnswer}
+        />
+      </div>
+
       <Math_formula
         answer={answer}
         setAnswer={setAnswer}

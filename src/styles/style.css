@@ -46,3 +46,6 @@ body {
   justify-content: center;
   height: "100vh";
 }
+.time_input_wrapper {
+  margin-top: 5%;
+}

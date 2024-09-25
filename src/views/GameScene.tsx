@@ -14,7 +14,9 @@ const Game: React.FC = () => {
   const [NewFormula, setNewFormula] = useState("Enterで開始"); //式の表示
   const Remember_Numbers_Numbers: number = 2; //おぼえる数 defaltは2
 
+  const [CountStartBool, setCountStartBool] = useState(false);
   useEffect(() => {
+    if (!CountStartBool) return; // CountStartBoolがfalseなら何もしない
     // タイマーを設定
     const timer = setInterval(() => {
       setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0)); // 0未満にはしない
@@ -22,7 +24,7 @@ const Game: React.FC = () => {
 
     // コンポーネントがアンマウントされるときにクリーンアップ
     return () => clearInterval(timer);
-  }, []);
+  }, [CountStartBool]);
 
   /* 誤答した時に5秒引くやつ */
   const handleIncorrectAnswer = () => {
@@ -49,6 +51,9 @@ const Game: React.FC = () => {
         inputValue === undefined &&
         answer.length <= Remember_Numbers_Numbers
       ) {
+        if (answer.length === Remember_Numbers_Numbers) {
+          setCountStartBool(true);
+        }
         generateExpression();
       } else if (
         inputValue === answer[answer.length - (Remember_Numbers_Numbers + 1)]
@@ -71,10 +76,7 @@ const Game: React.FC = () => {
   return (
     <div className="answer_input_container">
       <div className="time_input_wrapper">
-        <TimeLimitTimer
-          timeLeft={timeLeft}
-          onIncorrectAnswer={handleIncorrectAnswer}
-        />
+        <TimeLimitTimer timeLeft={timeLeft} />
       </div>
 
       <Math_formula

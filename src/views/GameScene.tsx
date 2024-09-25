@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import TimeLimitTimer from "../components/TimeLimitTimer";
 import Math_formula from "../components/math_formula";
 import InputEmpty from "../components/input_empty";
-import backgroundImage1 from "../images/背景_夏_涼しい.jpeg";
 import { useNavigate } from "react-router-dom";
 import "../styles/style.css";
 
@@ -13,6 +12,7 @@ const Game: React.FC = () => {
   const [correctCount, setCorrectCount] = useState(0); //正解数
   const [NewFormula, setNewFormula] = useState("Enterで開始"); //式の表示
   const Remember_Numbers_Numbers: number = 2; //おぼえる数 defaltは2
+  const [restNumber, setRestNumber] = useState(Remember_Numbers_Numbers + 1);
 
   const [CountStartBool, setCountStartBool] = useState(false);
   useEffect(() => {
@@ -55,6 +55,7 @@ const Game: React.FC = () => {
           setCountStartBool(true);
         }
         generateExpression();
+        setRestNumber((prevRestNumber) => prevRestNumber - 1);
       } else if (
         inputValue === answer[answer.length - (Remember_Numbers_Numbers + 1)]
       ) {
@@ -97,6 +98,7 @@ const Game: React.FC = () => {
         inputValue={inputValue}
         setInputValue={setInputValue}
         onKeyDown={handleKeyDown}
+        restNumber={restNumber}
       />
     </div>
   );

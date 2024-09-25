@@ -7,6 +7,7 @@ interface InputEmptyProps {
   inputValue: number | undefined;
   setInputValue: React.Dispatch<React.SetStateAction<number | undefined>>;
   onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  restNumber: number;
 }
 
 const InputEmpty: React.FC<InputEmptyProps> = ({
@@ -14,6 +15,7 @@ const InputEmpty: React.FC<InputEmptyProps> = ({
   inputValue,
   setInputValue,
   onKeyDown,
+  restNumber,
 }) => {
   // 入力値が変更された時に値を更新する
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,6 +33,7 @@ const InputEmpty: React.FC<InputEmptyProps> = ({
           value={inputValue ?? ""} // undefinedの場合は空文字を表示
           onChange={handleInputChange} // 入力値変更時に状態を更新
           onKeyDown={onKeyDown} // 親から受け取ったonKeyDownを適用
+          placeholder={restNumber > 0 ? `${restNumber}` : ""}
         />
       </div>
       <p>現在の答え: {answer.join(", ")}</p> {/* 現在の答えを表示 */}

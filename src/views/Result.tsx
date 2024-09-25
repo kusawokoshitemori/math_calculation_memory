@@ -1,5 +1,4 @@
 import React from "react";
-import backgroundImage1 from "../images/背景_夏_涼しい.jpeg";
 import "../styles/style.css";
 import { useNavigate } from "react-router-dom";
 
@@ -15,10 +14,7 @@ const Result = () => {
 
   return (
     <div>
-      <div
-        className="Setting_layout"
-        style={{ backgroundImage: `url(${backgroundImage1})` }}
-      >
+      <div className="Setting_layout">
         <p>あなたのスコアは </p>
         <button onClick={playAgain}>もう一度遊ぶ</button>
         <button onClick={goToTop}>タイトルに戻る</button>

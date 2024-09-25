@@ -49,3 +49,11 @@ body {
 .time_input_wrapper {
   margin-top: 5%;
 }
+
+/* result画面のやつ */
+.Setting_layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

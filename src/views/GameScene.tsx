@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Box } from "@mui/material";
 import TimeLimitTimer from "../components/TimeLimitTimer";
 import Math_formula from "../components/math_formula";
 import InputEmpty from "../components/input_empty";
 import backgroundImage1 from "../images/背景_夏_涼しい.jpeg";
+import { useNavigate } from "react-router-dom";
 import "../styles/style.css";
 
 const Game: React.FC = () => {
@@ -73,6 +73,13 @@ const Game: React.FC = () => {
     }
   };
 
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (timeLeft === 0) {
+      navigate("/result");
+    }
+  }, [timeLeft, navigate]);
+
   return (
     <div className="answer_input_container">
       <div className="time_input_wrapper">
@@ -94,5 +101,7 @@ const Game: React.FC = () => {
     </div>
   );
 };
+
+// correctCount.ts
 
 export default Game;

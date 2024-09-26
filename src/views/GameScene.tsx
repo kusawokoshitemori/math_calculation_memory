@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import TimeLimitTimer from "../components/TimeLimitTimer";
 import Math_formula from "../components/math_formula";
 import InputEmpty from "../components/input_empty";
 import { useNavigate } from "react-router-dom";
 import "../styles/style.css";
+import { RememberContext } from "../context/RememberContext";
 
 const Game: React.FC = () => {
   const [answer, setAnswer] = useState<number[]>([]); // answer状態を管理 これでこっちに配列を用意できる
 
   const [timeLeft, setTimeLeft] = useState(30); // 初期制限時間を30秒に設定
-  const [correctCount, setCorrectCount] = useState(0); //正解数
+  const { correctCount, setCorrectCount } = useContext(RememberContext);
   const [NewFormula, setNewFormula] = useState("Enterで開始"); //式の表示
-  const Remember_Numbers_Numbers: number = 2; //おぼえる数 defaltは2
+  const { Remember_Numbers_Numbers } = useContext(RememberContext); //おぼえる数 defaltは2
   const [restNumber, setRestNumber] = useState(Remember_Numbers_Numbers + 1);
 
   const [CountStartBool, setCountStartBool] = useState(false);

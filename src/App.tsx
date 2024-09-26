@@ -4,6 +4,7 @@ import Top from "./views/Top"; // 新しく作成したHomeコンポーネント
 import Game from "./views/GameScene"; // Aboutも同様に別ファイルにしている前提
 import Setting from "./views/Setting";
 import Result from "./views/Result";
+import { RememberProvider } from "./context/RememberContext";
 
 const App = () => {
   return (

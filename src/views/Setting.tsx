@@ -17,7 +17,7 @@ const Setting = () => {
 
   return (
     <div className="Setting_layout">
-      <div>
+      {/*<div>
         <p>おぼえる数・・・</p>
         <input type="number" />
       </div>
@@ -25,7 +25,8 @@ const Setting = () => {
       <Math_CheckBox label="チェック項目 1" checkboxNumber={1} />
       <Math_CheckBox label="チェック項目 2" checkboxNumber={2} />
       <Math_CheckBox label="チェック項目 3" checkboxNumber={3} />
-      <Math_CheckBox label="チェック項目 4" checkboxNumber={4} />
+      <Math_CheckBox label="チェック項目 4" checkboxNumber={4} />*/}
+      <p>準備中</p>
     </div>
   );
 };

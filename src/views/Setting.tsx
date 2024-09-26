@@ -26,7 +26,7 @@ const Setting = () => {
       <Math_CheckBox label="チェック項目 2" checkboxNumber={2} />
       <Math_CheckBox label="チェック項目 3" checkboxNumber={3} />
       <Math_CheckBox label="チェック項目 4" checkboxNumber={4} />*/}
-      <p>準備中</p>
+      <p style={{ fontSize: "128px" }}>準備中</p>
     </div>
   );
 };
